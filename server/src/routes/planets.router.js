@@ -1,4 +1,4 @@
-const planets = require('../models/planets.model');
+const {planets} = require('../models/planets.model');
 const express = require('express');
 const getAllPlanets = require('./planets.controller');
 const planetsRouter = express.Router();
