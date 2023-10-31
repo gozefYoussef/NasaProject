@@ -6,7 +6,7 @@ function httpGetAllLaunches(req,res){
 
 function httpAddNewLaunch(req,res){
     const launch =req.body;
-    if(!launch.rocket || !launch.mission || !launch.destination || !launch.launchDate){
+    if(!launch.rocket || !launch.mission || !launch.target || !launch.launchDate){
         res.status(400).json('bad Request')
     }else{
         launch.launchDate = new Date(launch.launchDate);
