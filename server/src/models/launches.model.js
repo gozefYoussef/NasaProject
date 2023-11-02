@@ -26,7 +26,13 @@ function addNewLaunch(launch){
         upcoming: true,}));
 }
 
+function deleteLaunch(id){
+    const index = launches.findIndex(launch => launch.flightNumber === parseInt(id));
+    launches.splice(index,1);
+}
+
 module.exports = {
     getAllLaunches,
     addNewLaunch,
+    deleteLaunch,
 }
