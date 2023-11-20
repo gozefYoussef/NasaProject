@@ -39,8 +39,9 @@ async function populateLaunches() {
   for (const launchDoc of launchDocs) {
     const payloads = launchDoc['payloads'];
     const customers = payloads.flatMap((payload) => {
-      return payload['customers'];
-    });
+      return payload['customers']
+    }
+    );
 
     const launch = {
       flightNumber: launchDoc['flight_number'],
@@ -49,6 +50,7 @@ async function populateLaunches() {
       launchDate: launchDoc['date_local'],
       upcoming: launchDoc['upcoming'],
       success: launchDoc['success'],
+      target: launchDoc['target'],
       customers,
     };
 
